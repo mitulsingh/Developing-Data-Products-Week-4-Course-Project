@@ -1,0 +1,39 @@
+Title : Analysis Of Choosing Cars
+========================================================
+author: Mitul Singh
+date: November 6, 2020
+autosize: true
+
+Introduction
+========================================================
+
+This presentation is a part of the course project for 'Developing Data Products' week 4 in the Data Science Specialization track by John Hopkins University on Coursera which is also a part of our University Curriculum for minor.
+
+The application is available on the given link:
+
+Overview
+========================================================
+
+This application analyses a car based on the mtcars dataset.
+
+
+It is based on the following characteristics : Cylinders, Displacement, Gross Horse Power and Transmission. 
+
+Dataset Overview
+========================================================
+
+The application uses 'mtcars' dataset from the 'datasets' package in R which lists down 10 aspects of automobile design and performance for 32 cars.
+
+| Index | Field | Detail |
+------- | ----- | ------ |
+| [, 1] | mpg | Miles/(US) gallon |
+| [, 2]  | c | Number of cylinders |
+| [, 3]	| d | Displacement (cu.in.) |
+| [, 4]	| h | Gross horsepower |
+| [, 5]	| rat | Rear axle ratio |
+| [, 6]	| w | Weight (lb/1000) |
+| [, 7]	| qsec | 1/4 mile time |
+| [, 8]	| v.s | V/S |
+| [, 9]	| tm | Transmission (0 = automatic, 1 = manual) |
+| [,10]	| g | No. of forward gears |
+| [,11]	| c | No. of carburetors |
