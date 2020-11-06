@@ -1,167 +1,24 @@
-library(shiny)
-
-
-
-shinyUI(
-
-navbarPage("Shiny Application",
-
-tabPanel("After Analysing",
-
-fluidPage(
-
-titlePanel("The interelation of variables and miles per gallon (MPG)"),
-
-sidebarLayout(
-
-sidebarPanel(
-
-selectInput("variable", "Variable:",
-
-c("No. of cylinders" = "a",
-
-"Displacement (cu.in.)" = "d",
-
-"Horsepower" = "h",
-
-"Rear axle ratio" = "rat",
-
-"Weight " = "w",
-
-"1/4 mile time" = "qsec",
-
-"V/S" = "v.s",
-
-"Transmission" = "tm",
-
-"No. of forward gears" = "g",
-
-"No. of carburetors" = "c"
-
-)),
-
-
-
-checkboxInput("outliers", "Show BoxPlot outliers", FALSE)
-
-),
-
-
-
-mainPanel(
-
-h3(textOutput("caption")),
-
-
-
-tabsetPanel(type = "tabs",
-
-tabPanel("BoxPlot", plotOutput("mpgBoxPlot")),
-
-tabPanel("Reg model",
-
-plotOutput("mpgPlot"),
-
-verbatimTextOutput("new")
-
-)
-
-)
-
-)
-
-)
-
-)
-
-),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tabPanel("About Data ",
-
-h2("Motor Trend Tests"),
-
-hr(),
-
-h3("About"),
-
-helpText("The data is taken from the 1974 Motor Trend US magazine,",
-
-" and comprises fuel consumption and 10 aspects of automobile design and performance",
-
-
-
-h3("Format"),
-
-p("A data frame with 32 observations on 11 variables."),
-
-
-
-p(" [, 1] mpg Miles/(US) gallon"),
-
-p(" [, 2] a Number of cylinders"),
-
-p(" [, 3] d Displacement (cu.in.)"),
-
-p(" [, 4] h horsepower"),
-
-p(" [, 5] rat Rear axle ratio"),
-
-p(" [, 6] w Weight (lb/1000)"),
-
-p(" [, 7] qsec 1/4 mile time"),
-
-p(" [, 8] v.s V/S"),
-
-p(" [, 9] tm Transmission (0 = automatic, 1 = manual)"),
-
-p(" [,10] g No. of forward gears"),
-
-p(" [,11] c No. of carburetors"),
-
-
-
-h3("Source"),
-p("Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391-411.")
+library(markdown)
+
+shinyUI(fluidPage(
+    
+    titlePanel("Choose a car that you want depending upon different characteristics"),
+    
+    sidebarLayout(
+        sidebarPanel(
+            helpText("Provide the following information"),
+            numericInput('d', 'Distance :', 50, min = 1, max = 100),
+            numericInput('CP', 'Cost Price (per gallon):', 2.41, min = 2, max = 4, step=0.01),
+            numericInput('g', 'Max Spending:', 50, min=1, max=100),
+            checkboxGroupInput('c', 'No. of cylinders:', c("Four"=4, "Six"=6, "Eight"=8), selected = c(4,6,8)),
+            sliderInput('d', 'Displacement', min=70, max=480, value=c(70,480), step=10),
+            sliderInput('h', 'Total Horsepower', min=50, max=340, value=c(50,340), step=10),
+            checkboxGroupInput('tm', 'Transmission:', c("Automatic"=0, "Manual"=1), selected = c(0,1))
         ),
-
-
-
-
-
-
-tabPanel("Go to my Github repository",
-
-a("https://github.com/mitulsingh/Developing-Data-Products-Week-4-Course-Project/tree/main"),
-
-hr(),
-
-h4("This is my first shiny app"),
-
-h4("Developing Data Products Week 4 Course Project")
-
+        mainPanel(
+            dataTableOutput('table')
+        )
+    )
+    
 )
-
-)
-
-)
-// This is done by Mitul Singh
+)   
