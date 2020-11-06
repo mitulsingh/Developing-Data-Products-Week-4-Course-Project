@@ -5,8 +5,8 @@ library(ggpubr)
 mpg_ <- mtcars
 mpg_$am <- factor(mpg_$am, labels = c("Automatic", "Manual")) 
 
-// Labelling them as Automatic and Manual
-// Data set is mtcars named as mpg_
+#Labelling them as Automatic and Manual
+# Data set is mtcars named as mpg_
 
 shinyServer(function(input, output) {
   
@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
     formTxt()
   })
   
-  // Making a box plot 
+  # Making a box plot 
   
   output$mpgBoxPlot <- renderPlot({
     boxplot(as.formula(formTxt()), 
