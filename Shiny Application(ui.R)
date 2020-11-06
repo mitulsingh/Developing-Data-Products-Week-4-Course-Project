@@ -62,7 +62,7 @@ tabPanel("Reg model",
 
 plotOutput("mpgPlot"),
 
-verbatimTextOutput("fit")
+verbatimTextOutput("new")
 
 )
 
@@ -141,14 +141,15 @@ p(" [,11] c No. of carburetors"),
 
 
 h3("Source"),
+p("Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391-411.")
+        ),
 
 
 
 
 
 
-
-tabPanel("Go back to my Github repository",
+tabPanel("Go to my Github repository",
 
 a("https://github.com/mitulsingh/Developing-Data-Products-Week-4-Course-Project/tree/main"),
 
